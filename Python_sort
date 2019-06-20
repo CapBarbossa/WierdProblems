@@ -1,0 +1,13 @@
+问题描述：
+  无论是启动python3 qtconsole，还是import tensorflow as tf,还是使用pip，都报下面的错误
+    AttributeError: '_NamespacePath' object has no attribute 'sort'
+解决方案：
+  sudo vim +2066 /usr/lib/python3/dist-packages/pkg_resources/__init__.py
+注释掉下面两行
+  #orig_path.sort(key=position_in_sys_path)
+  #module.__path__[:] = [_normalize_cached(p) for p in orig_path]
+改为
+  orig_path_t = list(orig_path)
+  orig_path_t.sort(key=position_in_sys_path)
+  module.__path__[:] = [_normalize_cached(p) for p in orig_path_t]
+Done。
