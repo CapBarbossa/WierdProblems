@@ -1,0 +1,3 @@
+使用keras第三方包建立的模型：
+    import keras
+而非是通过tensorflow.keras建立的模型，在compile的时候，相应的optimizer和loss也必须由keras本身建立起来，如果用tensorflow.keras建立optimizer和loss，将会报错，说什么不认识optimizer.
