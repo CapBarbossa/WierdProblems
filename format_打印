@@ -1,0 +1,2 @@
+'{fname},{xmin},{ymin},{xmax},{ymax},{class}\n'.format(fname='123',xmin=5,ymin=1,xmax=4,ymax=3,class=-1)
+这句命令不能够正常地按照预期格式化输出，原因杂鱼狗日的用到了'class'这个关键字，改为其他的就可以了，比如class_caonima.
