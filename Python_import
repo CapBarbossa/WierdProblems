@@ -1,0 +1,21 @@
+有一个目录结构如下：
+  utils
+    prepare
+      a.py
+      utils.py
+目录utils中有一个目录prepare， 它下面有一个跟父目录utils目录同名的py文件，在a.py中导入utils.py中的函数：
+from utils.utils import funcA
+会报错：
+  ImportError: No module named 'utils.prepare'; 'utils' is not a package
+
+原因：
+  utils.py与父目录的名称重名了
+
+
+解决办法：
+  将utils.py更名为utils2.py就可以了。
+
+2. 一个小技巧：当使用pip 安装某个Python包报错时，改用apt-get install python-Reshapely， 可以自动解决依赖问题问题迎刃而解。
+
+
+
