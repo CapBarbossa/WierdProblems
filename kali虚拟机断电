@@ -1,0 +1,9 @@
+强制执行fsck提示, 一直进不去系统, 提示信息如下:
+  /dev/sda1: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY.(i.e., without -a or -p option)
+  fsck with exit status 4
+  
+Solution:
+  fsck -y /dev/sda1
+  
+  
+  
