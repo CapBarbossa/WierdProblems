@@ -1,0 +1,14 @@
+在运行脚本时，有一句Python语句：｀os.system('mkdir -p ' + cls.checkpoint)｀,一直报错：
+  ```python
+  sh mkdir not found
+  ```
+结果这个Ｂ特么只能够生成一个目录，就是Tensorboard,剩下的checkpoint目录就生成不了了，相当的怪异！
+解决办法：
+  在PyCharm菜单栏，Run-Edit Configuration, 设置下方的Environment-variables右侧的图书按钮，弹出来环境变量设置框，在此设置框的下方，有一个名称为`include system environment variables`，找到Path选项，添加命令mkdir所在的目录`/usr/bin`．
+  其实这个Path目录很关键，它决定了很多外部命令能否被PyCharm正确的找到．除去这个`mkdir`命令，还有另外的转`tflite`的命令`toco_tflite`现在是瞎写的，反正就是那个命令，它在Parrot中是装在了~/.local/bin文件夹下,在`PyCharm`中调用的时候总是说找不到那个命令,结果还是设置完Path变量以后就都可以工作了.
+  
+  一个蟑螂问题: 搜狗输入法的这个傻逼中文标点, 在图标上面右击选择全半角切换,就可以在中文输入状态下直接输入英文字符了.快捷键是Shift+Space
+  
+  
+  
+  
